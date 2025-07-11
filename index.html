@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Heineken, Bernini & Hunters News Dashboard</h1>
+                <p class="subtitle">Latest news coverage for Heineken, Hunters, and Bernini</p>
+            </div>
+        </header>
+
+        <!-- Hero Carousel Section -->
+        <div class="hero-section">
+            <div class="hero-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carousel-track">
+                        <!-- Carousel items will be populated by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="carousel-btn prev-btn" id="prev-btn">‹</button>
+                <button class="carousel-btn next-btn" id="next-btn">›</button>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="carousel-indicators"></div>
+                
+                <!-- Play/Pause Button -->
+                <button class="carousel-play-pause" id="play-pause-btn">
+                    <span class="play-icon">⏸️</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="brand-filter">
+                <button class="brand-btn active" data-brand="all">All Brands</button>
+                <button class="brand-btn" data-brand="Heineken">Heineken</button>
+                <button class="brand-btn" data-brand="Hunters">Hunters</button>
+                <button class="brand-btn" data-brand="Bernini">Bernini</button>
+            </div>
+            <input type="text" class="search-box" placeholder="Search news articles...">
+            <button class="refresh-btn">Refresh</button>
+        </div>
+
+        <div class="stats" id="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-articles">0</div>
+                <div class="stat-label">Total Articles</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="heineken-count">0</div>
+                <div class="stat-label">Heineken</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="hunters-count">0</div>
+                <div class="stat-label">Hunters</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="bernini-count">0</div>
+                <div class="stat-label">Bernini</div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading">Loading news articles...</div>
+        <div id="error" class="error" style="display: none;"></div>
+        
+        <!-- Top Pagination -->
+        <div id="top-pagination" class="pagination" style="display: none;"></div>
+        
+        <div id="news-container" class="news-grid"></div>
+        
+        <!-- Bottom Pagination -->
+        <div id="bottom-pagination" class="pagination" style="display: none;"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
